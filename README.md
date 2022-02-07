@@ -1,6 +1,6 @@
 # nxs-go-zabbix
 
-This Go package provides access to Zabbix API v5.0.
+This Go package provides access to Zabbix API v5.4.
 Also see older versions in other branches.
 
 At the time not all Zabbix API methods are implemented, but work in progress.
@@ -24,28 +24,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/nixys/nxs-go-zabbix/v5"
+	"github.com/padremortius/nxs-go-zabbix/v5"
 )
-
-func zabbixLogin(z *zabbix.Context, zbxHost, zbxUsername, zbxPassword string) {
-
-	if err := z.Login(zbxHost, zbxUsername, zbxPassword); err != nil {
-		fmt.Println("Login error:", err)
-		os.Exit(1)
-	} else {
-		fmt.Println("Login: success")
-	}
-}
-
-func zabbixLogout(z *zabbix.Context) {
-
-	if err := z.Logout(); err != nil {
-		fmt.Println("Logout error:", err)
-		os.Exit(1)
-	} else {
-		fmt.Println("Logout: success")
-	}
-}
 
 func main() {
 
@@ -53,16 +33,16 @@ func main() {
 
 	/* Get variables from environment to login to Zabbix server */
 	zbxHost := os.Getenv("ZABBIX_HOST")
-	zbxUsername := os.Getenv("ZABBIX_USERNAME")
-	zbxPassword := os.Getenv("ZABBIX_PASSWORD")
-	if zbxHost == "" || zbxUsername == "" || zbxPassword == "" {
-		fmt.Println("Login error: make sure environment variables `ZABBIX_HOST`, `ZABBIX_USERNAME` and `ZABBIX_PASSWORD` are defined")
+	zbxAPIKey := os.Getenv("ZABBIX_APIKEY")
+
+	if zbxHost == "" || zbxAPIKey == "" {
+		fmt.Println("Login error: make sure environment variables `ZABBIX_HOST`, `ZABBIX_APIKEY` are defined")
 		os.Exit(1)
 	}
 
-	/* Login to Zabbix server */
-	zabbixLogin(&z, zbxHost, zbxUsername, zbxPassword)
-	defer zabbixLogout(&z)
+	/* Set connect params to zabbix server */
+	z.SessionKey = zbxAPIKey
+	z.Host = zbxHost
 
 	/* Get all hosts */
 	hObjects, _, err := z.HostGet(zabbix.HostGetParams{

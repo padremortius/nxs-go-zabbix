@@ -58,17 +58,17 @@ const (
 type HostinterfaceObject struct {
 	Available              int                             `json:"available,omitempty"`
 	Details                []HostinterfaceDetailsTagObject `json:"details,omitempty"`
-	DisableUntil           int                             `json:"disable_until"`
-	DNS                    string                          `json:"dns"`
+	DisableUntil           int                             `json:"disable_until,omitempty"`
+	DNS                    string                          `json:"dns,omitempty"`
 	HostInterfaceError     string                          `json:"error,omitempty"`
 	HostInterfaceErrorFrom int                             `json:"errors_from,omitempty"`
 	HostID                 string                          `json:"hostid,omitempty"`
 	InterfaceID            string                          `json:"interfaceid,omitempty"`
-	IP                     string                          `json:"ip"`
-	Main                   int                             `json:"main"` // has defined consts, see above
-	Port                   string                          `json:"port"`
-	Type                   int                             `json:"type"`  // has defined consts, see above
-	UseIP                  int                             `json:"useip"` // has defined consts, see above
+	IP                     string                          `json:"ip,omitempty"`
+	Main                   int                             `json:"main,omitempty"` // has defined consts, see above
+	Port                   string                          `json:"port,omitempty"`
+	Type                   int                             `json:"type,omitempty"`  // has defined consts, see above
+	UseIP                  int                             `json:"useip,omitempty"` // has defined consts, see above
 
 	// Items []ItemObject `json:"items,omitempty"` // not implemented yet
 	Hosts []HostObject `json:"hosts,omitempty"`

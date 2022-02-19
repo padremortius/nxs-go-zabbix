@@ -106,6 +106,7 @@ type HostObject struct {
 
 	Groups          []HostgroupObject     `json:"groups,omitempty"`
 	Interfaces      []HostinterfaceObject `json:"interfaces,omitempty"`
+	Items           []ItemObject          `json:"items,omitempty"`
 	Tags            []HostTagObject       `json:"tags,omitempty"`
 	InheritedTags   []HostTagObject       `json:"inheritedTags,omitempty"`
 	Macros          []UsermacroObject     `json:"macros,omitempty"`
@@ -171,7 +172,7 @@ type HostGetParams struct {
 	// SelectHTTPTests       SelectQuery `json:"selectHttpTests,omitempty"` // not implemented yet
 	SelectInterfaces SelectQuery `json:"selectInterfaces,omitempty"`
 	// SelectInventory       SelectQuery `json:"selectInventory,omitempty"` // not implemented yet
-	// SelectItems           SelectQuery `json:"selectItems,omitempty"` // not implemented yet
+	SelectItems           SelectQuery `json:"selectItems,omitempty"`
 	SelectMacros          SelectQuery `json:"selectMacros,omitempty"`
 	SelectParentTemplates SelectQuery `json:"selectParentTemplates,omitempty"`
 	// SelectScreens         SelectQuery `json:"selectScreens,omitempty"` // not implemented yet

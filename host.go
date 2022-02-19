@@ -178,7 +178,7 @@ type HostGetParams struct {
 	// SelectScreens         SelectQuery `json:"selectScreens,omitempty"` // not implemented yet
 	SelectTags          SelectQuery `json:"selectTags,omitempty"`
 	SelectInheritedTags SelectQuery `json:"selectInheritedTags,omitempty"`
-	// SelectTriggers        SelectQuery `json:"selectTriggers,omitempty"` // not implemented yet
+	SelectTriggers      SelectQuery `json:"selectTriggers,omitempty"`
 }
 
 // Structure to store creation result

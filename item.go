@@ -108,7 +108,7 @@ type ItemGetParams struct {
 
 	SelectHosts SelectQuery `json:"selectHosts,omitempty"`
 	// SelectInterfaces    SelectQuery `json:"selectInterfaces,omitempty"`    // not implemented yet
-	// SelectTriggers      SelectQuery `json:"selectTriggers,omitempty"`      // not implemented yet
+	SelectTriggers SelectQuery `json:"selectTriggers,omitempty"`
 	// SelectGraphs        SelectQuery `json:"selectGraphs,omitempty"`        // not implemented yet
 	// SelectDiscoveryRule SelectQuery `json:"selectDiscoveryRule,omitempty"` // not implemented yet
 	SelectItemDiscovery SelectQuery `json:"selectItemDiscovery,omitempty"`

@@ -69,7 +69,7 @@ type TemplateGetParams struct {
 	// SelectHttpTests       SelectQuery `json:"selectHttpTests,omitempty"` // not implemented yet
 	// SelectItems           SelectQuery `json:"selectItems,omitempty"` // not implemented yet
 	// SelectDiscoveries     SelectQuery `json:"selectDiscoveries,omitempty"` // not implemented yet
-	// SelectTriggers        SelectQuery `json:"selectTriggers,omitempty"` // not implemented yet
+	SelectTriggers SelectQuery `json:"selectTriggers,omitempty"`
 	// SelectGraphs          SelectQuery `json:"selectGraphs,omitempty"` // not implemented yet
 	SelectMacros SelectQuery `json:"selectMacros,omitempty"`
 	// SelectDashboards      SelectQuery `json:"selectDashboards,omitempty"` // not implemented yet

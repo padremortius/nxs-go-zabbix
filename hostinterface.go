@@ -70,7 +70,7 @@ type HostinterfaceObject struct {
 	Type                   int                             `json:"type"`  // has defined consts, see above
 	UseIP                  int                             `json:"useip"` // has defined consts, see above
 
-	// Items []ItemObject `json:"items,omitempty"` // not implemented yet
+	Items []ItemObject `json:"items,omitempty"`
 	Hosts []HostObject `json:"hosts,omitempty"`
 }
 
